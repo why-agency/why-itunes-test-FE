@@ -20,13 +20,13 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 # Full Stack (FE+BE) Developer Test
 
-The test will consist of a common task starting from a standard create-next-app template with Next 15. Applicants can do an extra task depending on whether they are applying for Frontend or Full Stack positions. 
+This test consists of a base task and a focus task. The base task is required for all applicants. Choose one focus task depending on your field of expertise.
 
-# Introduction
+## Introduction
 
-This task should take around 3 hours to complete. Please do not spend more than 4 hours. Keep in mind that it is not realistic that you finish all tasks with production-level quality in the time suggested. Besides output, we want to see your understanding of the tasks, your strengths, approach and philosophy. There will always be time in the interview to discuss what you didn’t have time to finish.
+This task should take around 3 hours to complete. Please do not spend more than 4 hours. It is not expected that you finish all tasks with production-level quality in the time given. Besides output, we want to see your understanding of the tasks, your strengths, approach and philosophy. There will be time in the interview to discuss what you didn't have time to finish and the trade-offs you made.
 
-Usage of AI coding assistants is encouraged, but be mindful that we will ask questions to test your understanding of the task in the interview.
+Usage of AI coding assistants is encouraged, but be mindful that we will ask questions to test your understanding of the code in the interview.
 
 When you are done, please create a PR in the repository including a description of your changes.
 
@@ -39,41 +39,48 @@ If you need to be added with a different account, or run into any trouble, conta
 
 ## Base Task
 
-Display a grid of music search results (artists, albums, songs) with the name and an image if available (feel free to also display other information returned in the API response) for each result.
+Display a grid of music search results (artists, albums, songs) with the name and an image if available. Feel free to also display other information returned in the API response.
 
-Here is a Figma file with a very basic mockup: https://www.figma.com/design/QaAUTjri39HPaSUTEoMfWQ/Cat-Grid?node-id=282-53
+Here is a Figma file with a basic mockup: https://www.figma.com/design/QaAUTjri39HPaSUTEoMfWQ/Cat-Grid?node-id=282-53
 
-Also keep in mind that UI is not the focus of the base task, feel free to use component libraries to speed up development. We like [shadcn](https://ui.shadcn.com/). Other than that, please use [TailwindCSS](https://tailwindcss.com/) (it’s already set up).
+UI polish is not the focus of the base task. Feel free to use component libraries to speed up development. We like [shadcn](https://ui.shadcn.com/). Other than that, please use [TailwindCSS](https://tailwindcss.com/) (it's already set up).
 
 **Requirements**:
 
-- The information must be fetched from the [iTunes Search API](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/index.html#//apple_ref/doc/uid/TP40017632-CH3-SW1)
+- Fetch data from the [iTunes Search API](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/index.html#//apple_ref/doc/uid/TP40017632-CH3-SW1)
     - Example request: `https://itunes.apple.com/search?media=music&entity=musicArtist,album,song&term={your+search+term}`
-- There is a search bar that can be used to search with plaintext. The search should run without interaction from the user.
-- A row below the search bar lets the user add extra filters like music genre, specific entity (artist, album, song) or language. There should also be a checkbox to allow explicit content that defaults to false.
-- The grid should be responsive and adapt to at least desktop and mobile screen sizes.
-- Hint: Fetch should be done via nextjs server actions
+- A search bar for plaintext search. The search should trigger automatically as the user types (debounced), without requiring a button click.
+- A filter row below the search bar with:
+    - Entity type filter (artist, album, song) — use the API's `entity` parameter
+    - Client side genre filter
+    - Explicit content checkbox (defaults to unchecked/hidden) — use the API's `explicit` parameter
+- The grid must be responsive and work on desktop and mobile screen sizes.
+- Fetching should be done via Next.js server actions.
 
 ## Frontend Focus Task
 
-For the Frontend Developer position, the extra focus on the understanding of page navigation, animations and data fetching.
+For the Frontend Developer position. This task focuses on page navigation, animations, and data fetching.
 
-**Focus Task**: 
+**Requirements**:
 
-- Implement sorting at least by Alphabetical ascending/descending. The user should be able to change this through a button.
-- **Use Motion** ([https://motion.dev/](https://motion.dev/)) to add a touch of interactivity or animation. Where and how is up to you. Be creative and show us what you got :)
-- When clicking on a card, a detail view is opened showing more information, i.e. clicking on an album opens an album page with a list of all songs, etc. - again be creative, come up with something that makes sense to you
+- Implement sorting by name (alphabetical ascending/descending). The user should be able to toggle this via a button.
+- Use [Motion](https://motion.dev/) to add interactivity or animation. Where and how is up to you — be creative and show us what you can do.
+- Clicking on a card opens a detail view with more information. For example, clicking an album shows a page with all its songs. Be creative with what makes sense for each entity type.
     - Example request: `https://itunes.apple.com/lookup?id={albumId}&entity=song`
-- Nice to have: Instead of a new page, open in an overlay using Nextjs route interception. [https://nextjs.org/docs/app/api-reference/file-conventions/intercepting-routes](https://nextjs.org/docs/app/api-reference/file-conventions/intercepting-routes)
+
+**Bonus**
+- Instead of navigating to a new page, open the detail view in a modal using [Next.js route interception](https://nextjs.org/docs/app/api-reference/file-conventions/intercepting-routes). This is an advanced pattern — don't let it eat into time for the core requirements.
 
 ## Backend Focus Task
 
-For the Full Stack Developer position, this extra task tests your understanding of APIs and AI.
+For the Full Stack Developer position. This task focuses on API design and AI integration.
 
-**Focus Task**: Implement an `/api/similar/{artistId}` endpoint that, based on the artist id, generates 3 artist suggestions using AI / LLMs (we like using the [Vercel AI SDK](https://ai-sdk.dev/docs/introduction)).
+**Requirements**:
 
-- OpenAI API Key: [1password link](https://share.1password.com/s#-CrGCHHpx89lGhSkAigYQs0bp0qQWHGbVPxVOzmfK6Q) (link expires Nov 8)
+Implement a `/api/similar/{artistId}` endpoint that takes an artist ID and returns 3 similar artist suggestions generated by an LLM. We recommend using the [Vercel AI SDK](https://ai-sdk.dev/docs/introduction).
 
-This task is not just about structuring the AI output and combining it with the API but also about your conceptional thinking behind the prompt - so give that some thought. 
+- OpenAI API Key: [1password link](https://share.1password.com/s#Hs73CbQOaKYQ7WtOb0wNge6OQ30XCTOUQO7oTxUKO7w) (link expires Jan 27)
 
-Trigger this endpoint from the frontend & display the results; add additional interesting facts or deep-dives to your liking or explain to us where you would go next.
+This task is not just about structuring the AI output — we're also interested in your thinking behind the prompt design.
+
+Trigger this endpoint from the frontend. Then, use the iTunes API to fetch information about the suggested artists and display them to the user.
