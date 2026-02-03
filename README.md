@@ -10,6 +10,7 @@ Welcome to the &why Coding Challenge 👋 To get started:
 - Run the development server with `pnpm run dev` or `npm run dev`
 - Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 - You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Create a feature branch where you work and commit your changes.
 
 (You can also use other package manager if you like)
 
