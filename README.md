@@ -6,7 +6,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 Welcome to the &why Coding Challenge 👋 To get started:
 
-- Install the packages with `pnpm install` or `pnpm install`
+- Install the packages with `pnpm install` or `npm install`
 - Run the development server with `pnpm run dev` or `npm run dev`
 - Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 - You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
