@@ -1,8 +1,8 @@
-# Junior Frontend Test
+# 🎵 Junior Frontend Test
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+## 🚀 Getting Started
 
 Welcome to the &why Coding Challenge 👋 To get started:
 
@@ -13,7 +13,7 @@ Welcome to the &why Coding Challenge 👋 To get started:
 
 (You can also use other package manager if you like)
 
-## Overview
+## 📋 Overview
 
 Goal of this challenge is to get an impression of how you approach and solve a simple task.
 
@@ -25,7 +25,7 @@ Goal of this challenge is to get an impression of how you approach and solve a s
 
 When you are done, please create a PR in the repository including a short description
 
-## Task
+## 🎯 Task
 
 Display a grid of music search results (artists, albums, songs) with the name and an image if available. Feel free to also display other information returned in the API response.
 
@@ -33,7 +33,7 @@ Here is a Figma file with a basic mockup: https://www.figma.com/design/QaAUTjri3
 
 The mockup serves as a basic idea of the grid. Feel free to style it in a way that you think makes sense.
 
-### Base steps
+### ✅ Base steps
 
 - Fetch data from the [iTunes Search API](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/index.html#//apple_ref/doc/uid/TP40017632-CH3-SW1)
 
@@ -43,7 +43,7 @@ The mockup serves as a basic idea of the grid. Feel free to style it in a way th
 - Render the items as cards in a grid layout. The layout should be responsive and work on desktop and mobile screen sizes.
 - Style the card and the grid.
 
-### Additional steps
+### ⭐ Additional steps
 
 Pick tasks from the following list that you consider relevant or interesting to you:
 
@@ -59,9 +59,10 @@ Pick tasks from the following list that you consider relevant or interesting to 
 
 - Clicking on a card opens a detail page or detail view with more information. For example, clicking an album shows a page with all its songs. You could render different things depending on the entity type. Think about routing for the detail view.
 
-## Technologies to use
+## 🛠️ Technologies to use
 
 - This is a next.js/react app, so please write react components and rely on next.js features
 - Styling is preferrably done in [tailwind](https://tailwindcss.com/).
 - Feel free to use anything else that helps you. (Maybe [shadcn](https://ui.shadcn.com/) or [motion](https://motion.dev/))
-- Your code should respect eslint and prettier
+- Your code should respect eslint and prettier.
+- Commit your changes with git and provide meaningfull commit messages.
