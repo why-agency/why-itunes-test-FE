@@ -20,7 +20,9 @@ Goal of this challenge is to get an impression of how you approach and solve a s
 
 - The task is open-ended and there's no need to finish everything. Just show us what you achieved within the given time.
 
-- Usage of AI coding assistants is okay, but make sure to have an understanding of all code you commit. We will ask you technical questions about the code in the interview.
+- Usage of AI coding assistants is okay, but make sure to have an understanding of all code you commit. 
+
+- After the coding time there will be a technical interview where we'll questions about the code. Beeing able to understand and explain your code is just as important as the visible result.
 
 💡 Less code that you can explain is better than a lot of code where you are unsure how it works in detail.
 
