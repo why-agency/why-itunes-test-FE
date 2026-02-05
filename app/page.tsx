@@ -1,4 +1,5 @@
 import { AlbumDisplay } from '@/components/AlbumDisplay';
+import { SearchFieldWrapper } from '@/components/SearchFieldWrapper';
 import {
   ItunesAlbum,
   ItunesArtist,
@@ -6,7 +7,7 @@ import {
   ItunesTrack,
 } from '@/lib/types';
 import { isAlbum, isArtist, isTrack } from '@/lib/utils';
-import { Card, Label, SearchField } from '@heroui/react';
+import { Card } from '@heroui/react';
 import Link from 'next/link';
 
 async function getItunesResults(term: string) {
@@ -18,14 +19,19 @@ async function getItunesResults(term: string) {
   return res.json();
 }
 
-export default async function Home() {
-  const data = (await getItunesResults('mobb deep')) as ItunesSearchResponse;
+export default async function Home({
+  searchParams: rawSearchParams,
+}: {
+  searchParams: Promise<{ q?: string }>;
+}) {
+  const searchParams = await rawSearchParams;
+  const query = searchParams.q ?? 'why';
+
+  const data = (await getItunesResults(query)) as ItunesSearchResponse;
 
   const artists: ItunesArtist[] = data.results.filter(isArtist);
   const albums: ItunesAlbum[] = data.results.filter(isAlbum);
   const tracks: ItunesTrack[] = data.results.filter(isTrack);
-
-  console.log(artists);
 
   return (
     <div className='font-sans w-full'>
@@ -33,14 +39,7 @@ export default async function Home() {
         <div className='mb-15 pb-15 border-b flex items-center flex-col gap-5'>
           <h1 className='text-4xl font-bolder'>Welcome to &WhyTunes</h1>
 
-          <SearchField name='search' className='flex flex-col items-center'>
-            <Label className='w-fit'>Search to get stated</Label>
-            <SearchField.Group>
-              <SearchField.SearchIcon />
-              <SearchField.Input className='' placeholder='Search...' />
-              <SearchField.ClearButton />
-            </SearchField.Group>
-          </SearchField>
+          <SearchFieldWrapper defaultValue={query} />
         </div>
         <div className='flex flex-col gap-16 '>
           <section className='flex flex-col gap-5'>
