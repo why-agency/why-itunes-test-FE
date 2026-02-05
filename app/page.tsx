@@ -1,3 +1,4 @@
+import { AlbumDisplay } from '@/components/AlbumDisplay';
 import {
   ItunesAlbum,
   ItunesArtist,
@@ -5,7 +6,7 @@ import {
   ItunesTrack,
 } from '@/lib/types';
 import { isAlbum, isArtist, isTrack } from '@/lib/utils';
-import Image from 'next/image';
+import { Card } from '@heroui/react';
 import Link from 'next/link';
 
 async function getItunesResults(term: string) {
@@ -29,15 +30,21 @@ export default async function Home() {
   return (
     <div className='font-sans h-dvh w-full'>
       <main className='grow flex flex-col  size-full p-6'>
-        <h1 className='text-4xl'>Welcome to &WhyTunes</h1>
+        <h1 className='text-4xl font-bolder'>Welcome to &WhyTunes</h1>
         <div className='flex flex-col gap-10 mt-10'>
           <section className='flex flex-col gap-10'>
             <h2 className='text-3xl'>Artists</h2>
             <article className='grid grid-cols-4 gap-6'>
               {artists.map((artist, i) => (
-                <div key={`display-artist-info-${i}`}>
-                  <Link href={artist.artistLinkUrl}>{artist.artistName}</Link>
-                </div>
+                <Card key={`display-artist-info-${i}`}>
+                  <Card.Header>
+                    <Card.Title>
+                      <Link href={artist.artistLinkUrl}>
+                        {artist.artistName}
+                      </Link>
+                    </Card.Title>
+                  </Card.Header>
+                </Card>
               ))}
             </article>
           </section>
@@ -45,15 +52,7 @@ export default async function Home() {
             <h2 className='text-3xl'>Albums</h2>
             <article className='grid grid-cols-4 gap-6'>
               {albums.map((album, i) => (
-                <div key={`display-album-info-${i}`}>
-                  <Image
-                    src={album.artworkUrl100!}
-                    width={100}
-                    height={100}
-                    alt={`Album Arwork of ${album.collectionName}`}
-                  />
-                  <span>{album.collectionName}</span>
-                </div>
+                <AlbumDisplay key={`display-album-info-${i}`} album={album} />
               ))}
             </article>
           </section>
