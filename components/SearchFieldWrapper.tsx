@@ -36,8 +36,8 @@ export function SearchFieldWrapper({
           <SearchField.Input
             value={value}
             onChange={(e) => setValue(e.target.value)}
-            className=''
-            placeholder='Search...'
+            className='w-full'
+            placeholder='Search for your favourite music...'
           />
           <SearchField.ClearButton />
         </SearchField.Group>
