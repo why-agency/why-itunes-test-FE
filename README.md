@@ -52,7 +52,7 @@ The mockup serves as a basic idea of the grid. Feel free to style it in a way th
 Pick tasks from the following list that you consider relevant or interesting to you:
 
 - Add more styling or animations. (Hover, Appear on page load,etc.). You can use [Motion](https://motion.dev/) or plain tailwind.
-- Add a search bar for plaintext search. The search could trigger automatically as the user types (debounced), without requiring a button click.
+- Add a search bar for plaintext search instead of setting `term` to a fixed string. The search could trigger automatically as the user types (debounced), without requiring a button click.
 - Add a filter row to allow the user to filter:
 
   - Filtering e.g. by entity type filter (artist, album, song) — use the API's `entity` parameter
