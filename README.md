@@ -42,6 +42,7 @@ The mockup serves as a basic idea of the grid. Feel free to style it in a way th
 
   - Example request: `https://itunes.apple.com/search?media=music&entity=musicArtist,album,song&term={your+search+term}`
   - Fetching should be done in a Next.js [server component](https://nextjs.org/docs/app/getting-started/fetching-data)
+  - As a first step, you can set the search term to a fixed string, e.g. `&term="focus%20for%20work"`
 
 - Render the items as cards in a grid layout. The layout should be responsive and work on desktop and mobile screen sizes.
 - Style the card and the grid in a basic way.
