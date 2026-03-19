@@ -16,13 +16,13 @@ Welcome to the &why Coding Challenge 👋 To get started:
 
 ## 📋 Overview
 
-Goal of this challenge is to get an impression of how you approach and solve a simple task.
+Goal of this challenge is to get an impression of how you approach interaction and user experience.
 
 - The task is open-ended and there's no need to finish everything. Just show us what you achieved within the given time.
 
 - Usage of AI coding assistants is okay, but make sure to have an understanding of all code you commit. 
 
-- After the coding time there will be a technical interview where we'll ask questions about the code. Beeing able to understand and explain your code is just as important as the visible result.
+- After the coding time there will be a technical interview where we'll ask questions about the code. Being able to understand and explain your code is just as important as the visible result.
 
 💡 Less code that you can explain is better than a lot of code where you are unsure how it works in detail.
 
@@ -42,30 +42,24 @@ The mockup serves as a basic idea of the grid. Feel free to style it in a way th
 
   - Example request: `https://itunes.apple.com/search?media=music&entity=musicArtist,album,song&term={your+search+term}`
   - Fetching should be done in a Next.js [server component](https://nextjs.org/docs/app/getting-started/fetching-data)
+  - As a first step, you can set the search term to a fixed string, e.g. `&term="focus%20for%20work"`
 
 - Render the items as cards in a grid layout. The layout should be responsive and work on desktop and mobile screen sizes.
-- Style the card and the grid in a basic way.
+- Style the card and the grid in a way that feels delightful, fun, and useful.
+- For animations, you can use [Motion](https://motion.dev/) or plain tailwind.
+- Be creative! In this task, we'd like to see flair and creativity rather than extensive functionality.
+
 
 ### ⭐ Additional steps
 
 Pick tasks from the following list that you consider relevant or interesting to you:
-
-- Add more styling or animations. (Hover, Appear on page load,etc.). You can use [Motion](https://motion.dev/) or plain tailwind.
-- Add a search bar for plaintext search. The search could trigger automatically as the user types (debounced), without requiring a button click.
-- Add a filter row to allow the user to filter:
-
-  - Filtering e.g. by entity type filter (artist, album, song) — use the API's `entity` parameter
-  - Explicit content checkbox (defaults to unchecked/hidden) — use the API's `explicit` parameter
-  - Think about routing and search params.
-
-- Implement sorting by name (alphabetical ascending/descending). The user should be able to toggle this via a button.
 
 - Clicking on a card opens a detail page or detail view with more information. For example, clicking an album shows a page with all its songs. You could render different things depending on the entity type. Think about routing for the detail view.
 
 ## 🛠️ Technologies to use
 
 - This is a next.js/react app, so please write react components and rely on next.js features
-- Styling is preferrably done in [tailwind](https://tailwindcss.com/). If necessary you can fall back to css approaches.
+- Styling is preferably done in [tailwind](https://tailwindcss.com/). If necessary you can fall back to css approaches.
 - Feel free to use anything else that helps you. (Maybe [shadcn](https://ui.shadcn.com/) or [motion](https://motion.dev/))
 - Your code should respect eslint and prettier.
 - Commit your changes with git and provide meaningful commit messages.
